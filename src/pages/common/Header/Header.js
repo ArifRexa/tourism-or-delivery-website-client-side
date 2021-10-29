@@ -1,8 +1,10 @@
 import React from 'react';
 import {Container, Form, FormControl, Nav, Navbar, Offcanvas, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
+    const {user, logOut} = useAuth();
     return (
         <div>
             <Navbar bg="primary" expand={false} >
@@ -21,7 +23,13 @@ const Header = () => {
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Nav.Link as = {Link} to="/home">Home</Nav.Link>
                                 <Nav.Link as = {Link} to="/rides">Rides</Nav.Link>
-                                <Nav.Link as = {Link} to="/login">Login</Nav.Link>
+                                {
+                                    !user.email ?
+                                    <Nav.Link as = {Link} to="/login">Login</Nav.Link>: < >
+                                    <Nav.Link as={Link} to="/home" onClick={logOut} > Log Out</Nav.Link>
+                                    <Nav.Link as={Link} to="/login" >Signed as: {user.displayName}</Nav.Link>
+                                </>
+                                }
                             </Nav>
                             <Form className="d-flex">
                                 <FormControl
