@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Card, Col, Container, Form, Row, Button, ButtonGroup } from 'react-bootstrap';
+import { Card, Col, Container,  Button } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from '../Hooks/useAuth';
 import "./Booking.css";
@@ -24,7 +24,7 @@ const Booking = () => {
         axios.post('http://immense-lake-80129.herokuapp.com/bookings', data)
         .then(res => {
             if (res.data.insertedId) {
-                alert("Booking Confirmed Successfully")
+                window.alert("Booking Confirmed Successfully")
                 reset()
                 
             }
@@ -80,12 +80,8 @@ const Booking = () => {
                 <form onClick={handleSubmit(onSubmit)}>
                     <input defaultValue={user.displayName} {...register("name", { required: true, maxLength: 30 })} placeholder="Name"/>
                     <input defaultValue={user.email} {...register("email", {required: true})} placeholder="Email"/>
-                    {/* <input defaultValue={rideName} type="text" {...register("ride_name", {required: true})} placeholder="Rides Name"/> */}
-                    {/* <input defaultValue= {price}   {...register("price", {required: true})} /> */}
                     <input type="number" {...register("quantity", {required: true, min: 1, max: 10 })} placeholder="select quantity"/>
                     <input type="number" {...register("age", {required: true, min: 13, max: 99 })} placeholder="select age (min 13)"/>
-                    {/* <input type="text" {...register("status" , {required: true})} defaultValue="Pending" disabled/> */}
-
                     <input type="submit" value="Confirm"/>
                 </form>
             </Container>

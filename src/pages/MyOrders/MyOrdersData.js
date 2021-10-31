@@ -18,7 +18,7 @@ const MyOrdersData = (props) => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount) {
-                        alert("Deleted Successfully")
+                        window.alert("Deleted Successfully")
                         window.location.reload(false);
 
 

@@ -25,7 +25,7 @@ const MyOrders = () => {
 
             <Row xs={1} sm={2} md={3}>
             {
-                booking.map(bking => <MyOrdersData bking = {bking}></MyOrdersData>)
+                booking.map(bking => <MyOrdersData key={bking._id} bking = {bking}></MyOrdersData>)
             }
             </Row>
 

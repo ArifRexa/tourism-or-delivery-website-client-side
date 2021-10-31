@@ -13,7 +13,7 @@ const AddNewServices = () => {
         axios.post('http://immense-lake-80129.herokuapp.com/rides', data)
         .then(res => {
             if (res.data.insertedId) {
-                alert("Feature Add Successfully")
+                window.alert("Feature Add Successfully")
                 reset()
                 
             }

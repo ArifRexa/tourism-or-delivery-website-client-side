@@ -1,7 +1,13 @@
 .footer-style{
     height: 80px;
-    background-color: chartreuse;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white
+
+}
+
+.pagesize{
+    height: 1000px;
 }

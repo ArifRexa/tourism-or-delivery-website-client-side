@@ -17,7 +17,7 @@ const ManageOrders = () => {
 
                 <Row xs={1} sm={2} md={3} >
                     {
-                        allOrders.map(allOrder => <ManageOrdersData allOrder={allOrder}></ManageOrdersData>)
+                        allOrders.map(allOrder => <ManageOrdersData key={allOrder._id} allOrder={allOrder}></ManageOrdersData>)
                     }
                 </Row>
 

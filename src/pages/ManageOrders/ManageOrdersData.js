@@ -16,7 +16,7 @@ const ManageOrdersData = (props) => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount) {
-                        alert("Deleted Successfully")
+                        window.alert("Deleted Successfully")
                         window.location.reload(false);
 
 
@@ -39,7 +39,7 @@ const ManageOrdersData = (props) => {
         .then(res => res.json())
         .then(data => {
             if (data.modifiedCount > 0) {
-                alert("Approved Successfully")
+                window.alert("Approved Successfully")
                 window.location.reload(false);
                 
             }

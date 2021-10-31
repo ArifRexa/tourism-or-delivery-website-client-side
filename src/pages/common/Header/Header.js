@@ -1,15 +1,15 @@
 import React from 'react';
-import {Container, Form, FormControl, Nav, Navbar, Offcanvas, Button} from 'react-bootstrap'
+import { Container, Form, FormControl, Nav, Navbar, Offcanvas, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
-    const {user, logOut} = useAuth();
+    const { user, logOut } = useAuth();
     return (
         <div>
-            <Navbar bg="primary" expand={false} >
+            <Navbar bg="primary" expand={false} fixed="top">
                 <Container fluid>
-                    <Navbar.Brand as = {Link} to="/home">Navbar Offcanvas</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home">KBO PARK</Navbar.Brand>
                     <Navbar.Toggle aria-controls="offcanvasNavbar" />
                     <Navbar.Offcanvas
                         id="offcanvasNavbar"
@@ -17,26 +17,26 @@ const Header = () => {
                         placement="end"
                     >
                         <Offcanvas.Header closeButton>
-                            <Offcanvas.Title id="offcanvasNavbarLabel">Offcanvas</Offcanvas.Title>
+                            <Offcanvas.Title id="offcanvasNavbarLabel">MENU</Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link as = {Link} to="/home">Home</Nav.Link>
-                                <Nav.Link as = {Link} to="/rides">Rides</Nav.Link>
+                                <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                                <Nav.Link as={Link} to="/rides">Rides</Nav.Link>
                                 {
-                                    user.email&& 
+                                    user.email &&
                                     <div>
-                                        <Nav.Link as = {Link} to="/myorders">My Orders</Nav.Link>
-                                        <Nav.Link as = {Link} to="/manageorders">Manage All Bookings</Nav.Link>
-                                        <Nav.Link as = {Link} to="/addservices">Add a New Feature</Nav.Link>
+                                        <Nav.Link as={Link} to="/myorders">My Orders</Nav.Link>
+                                        <Nav.Link as={Link} to="/manageorders">Manage All Bookings</Nav.Link>
+                                        <Nav.Link as={Link} to="/addservices">Add a New Feature</Nav.Link>
                                     </div>
                                 }
                                 {
                                     !user.email ?
-                                    <Nav.Link as = {Link} to="/login">Login</Nav.Link>: < >
-                                    <Nav.Link as={Link} to="/home" onClick={logOut} > Log Out</Nav.Link>
-                                    <Nav.Link as={Link} to="/login" >Signed as: {user.displayName}</Nav.Link>
-                                </>
+                                        <Nav.Link as={Link} to="/login">Login</Nav.Link> : < >
+                                            <Nav.Link as={Link} to="/home" onClick={logOut} > Log Out</Nav.Link>
+                                            <Nav.Link as={Link} to="/login" >Signed as: {user.displayName}</Nav.Link>
+                                        </>
                                 }
                             </Nav>
                             <Form className="d-flex">

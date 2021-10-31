@@ -19,7 +19,7 @@ const Rides = () => {
 
                 <Row xs={1} md={3} className="g-4">
                     {
-                        rides.map(ride => <RidesData ride = {ride}></RidesData>)
+                        rides.map(ride => <RidesData key={ride._id} ride = {ride}></RidesData>)
                     }
                 </Row>
                 <Link  to="/home"><Button className="mt-2">Go Home</Button></Link>

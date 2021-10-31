@@ -3,7 +3,7 @@ import "./Footer.css"
 
 const Footer = () => {
     return (
-        <div className="footer-style mt-5">
+        <div className="footer-style mt-5" fixed="bottom">
             <h4 className="text-center">Copyright issue &copy; www.KBO-Park.com 2021 </h4>
             
         </div>
