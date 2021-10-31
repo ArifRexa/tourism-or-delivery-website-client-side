@@ -40,17 +40,17 @@ function App() {
               <Booking></Booking>
             </PrivetRoute>
 
-            <Route path="/myorders">
+            <PrivetRoute path="/myorders">
               <MyOrders></MyOrders>
-            </Route>
+            </PrivetRoute>
 
-            <Route path="/manageorders">
+            <PrivetRoute path="/manageorders">
               <ManageOrders></ManageOrders>
-            </Route>
+            </PrivetRoute>
 
-            <Route path="/addservices">
+            <PrivetRoute path="/addservices">
               <AddNewServices></AddNewServices>
-            </Route>
+            </PrivetRoute>
 
             <Route path="/login">
               <Login></Login>
