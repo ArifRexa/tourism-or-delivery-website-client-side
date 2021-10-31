@@ -6,6 +6,8 @@ import img3 from '../../images/img3.jpg'
 import img4 from '../../images/img4.jpg'
 import img5 from '../../images/img5.jpg'
 import HomeRides from './Homedata/HomeRides';
+import RidingOffer from './Homedata/RidingOffer';
+import SocialContact from './Homedata/SocialContact';
 
 const Home = () => {
     return (
@@ -78,6 +80,8 @@ const Home = () => {
             {/*=========================== Features and Rides =============================*/}
 
             <HomeRides></HomeRides>
+            <RidingOffer></RidingOffer>
+            <SocialContact></SocialContact>
 
         </div>
     );

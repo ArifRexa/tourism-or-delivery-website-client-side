@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Button, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import HomeData from './HomeData';
 
 const HomeRides = () => {
@@ -13,7 +14,7 @@ const HomeRides = () => {
     }, [])
     return (
         <div>
-            <h1>Our Rides</h1>
+            <h1 className="text-center my-5">Our Rides</h1>
             <Container>
 
                 <Row xs={1} md={3} className="g-4">
@@ -21,6 +22,8 @@ const HomeRides = () => {
                         rides.map(ride => <HomeData ride={ride}></HomeData>)
                     }
                 </Row>
+                <Link to = "/rides"><Button className="my-3">See more</Button></Link>
+                
             </Container>
 
 

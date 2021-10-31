@@ -1,0 +1,17 @@
+.icoon-style{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.icoon-style .fab{
+    font-size: 80px;
+    color: rgb(46, 46, 151);
+}
+
+.tear-size{
+    font-size: 80px;
+    margin-bottom: 20px;
+}

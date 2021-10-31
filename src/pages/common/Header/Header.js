@@ -9,7 +9,7 @@ const Header = () => {
         <div>
             <Navbar bg="primary" expand={false} >
                 <Container fluid>
-                    <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+                    <Navbar.Brand as = {Link} to="/home">Navbar Offcanvas</Navbar.Brand>
                     <Navbar.Toggle aria-controls="offcanvasNavbar" />
                     <Navbar.Offcanvas
                         id="offcanvasNavbar"
@@ -23,6 +23,14 @@ const Header = () => {
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Nav.Link as = {Link} to="/home">Home</Nav.Link>
                                 <Nav.Link as = {Link} to="/rides">Rides</Nav.Link>
+                                {
+                                    user.email&& 
+                                    <div>
+                                        <Nav.Link as = {Link} to="/myorders">My Orders</Nav.Link>
+                                        <Nav.Link as = {Link} to="/manageorders">Manage All Bookings</Nav.Link>
+                                        <Nav.Link as = {Link} to="/addservices">Add a New Feature</Nav.Link>
+                                    </div>
+                                }
                                 {
                                     !user.email ?
                                     <Nav.Link as = {Link} to="/login">Login</Nav.Link>: < >

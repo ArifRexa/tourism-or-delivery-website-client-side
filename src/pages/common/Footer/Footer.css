@@ -1,0 +1,7 @@
+.footer-style{
+    height: 80px;
+    background-color: chartreuse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import "../Home.css";
 
-const HomeData = (props) => {
+const RidesData = (props) => {
     const { _id, rideName, imgThumb, descriptions } = props.ride
     return (
         <div>
@@ -21,9 +20,8 @@ const HomeData = (props) => {
                 
                 
             </Card>
-
         </div>
     );
 };
 
-export default HomeData;
+export default RidesData;

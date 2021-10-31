@@ -6,12 +6,17 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
+import AddNewServices from './pages/AddNewServices/AddNewServices';
+import Booking from './pages/Booking/Booking';
 import Footer from './pages/common/Footer/Footer';
 import Header from './pages/common/Header/Header';
 import AuthProvider from './pages/Context/AuthProvider';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import ManageOrders from './pages/ManageOrders/ManageOrders';
+import MyOrders from './pages/MyOrders/MyOrders';
 import NotFound from './pages/NotFound/NotFound';
+import PrivetRoute from './pages/PrivetRoute/PrivetRoute';
 import Rides from './pages/Rides/Rides';
 
 function App() {
@@ -28,8 +33,27 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/rides">
+            <PrivetRoute path="/rides">
               <Rides></Rides>
+            </PrivetRoute>
+
+            {/* <PrivetRoute path = "/booking/:rideName">
+              <Booking></Booking>
+            </PrivetRoute> */}
+            <PrivetRoute path = "/booking/:_id">
+              <Booking></Booking>
+            </PrivetRoute>
+
+            <Route path="/myorders">
+              <MyOrders></MyOrders>
+            </Route>
+
+            <Route path="/manageorders">
+              <ManageOrders></ManageOrders>
+            </Route>
+            
+            <Route path="/addservices">
+              <AddNewServices></AddNewServices>
             </Route>
 
             <Route path="/login">
