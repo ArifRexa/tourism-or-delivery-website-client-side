@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Card, Col, Container,  Button } from 'react-bootstrap';
+import { Card, Col, Container, Button } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from '../Hooks/useAuth';
 import "./Booking.css";
@@ -19,18 +19,18 @@ const Booking = () => {
     const onSubmit = data => {
         data.status = "Pending"
         data.price = `${details.price}`
-        data.rideName=`${details.rideName}`
+        data.rideName = `${details.rideName}`
         console.log(data);
-        axios.post('http://immense-lake-80129.herokuapp.com/bookings', data)
-        .then(res => {
-            if (res.data.insertedId) {
-                window.alert("Booking Confirmed Successfully")
-                reset()
-                
-            }
-            
-        })
-            
+        axios.post('https://immense-lake-80129.herokuapp.com/bookings', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    window.alert("Booking Confirmed Successfully")
+                    reset()
+
+                }
+
+            })
+
     };
 
     useEffect(() => {
@@ -39,12 +39,12 @@ const Booking = () => {
             .then(data => setDetails(data))
     }, [])
 
-    const {rideName, price}= details;
+    const { rideName, price } = details;
     console.log(details.price);
     return (
-        <div className = "form-style">
+        <div className="form-style">
             <h1 className="text-center my-5">{rideName}</h1>
-            
+
 
             <Container>
 
@@ -78,11 +78,11 @@ const Booking = () => {
 
             <Container>
                 <form onClick={handleSubmit(onSubmit)}>
-                    <input defaultValue={user.displayName} {...register("name", { required: true, maxLength: 30 })} placeholder="Name"/>
-                    <input defaultValue={user.email} {...register("email", {required: true})} placeholder="Email"/>
-                    <input type="number" {...register("quantity", {required: true, min: 1, max: 10 })} placeholder="select quantity"/>
-                    <input type="number" {...register("age", {required: true, min: 13, max: 99 })} placeholder="select age (min 13)"/>
-                    <input type="submit" value="Confirm"/>
+                    <input defaultValue={user.displayName} {...register("name", { required: true, maxLength: 30 })} placeholder="Name" />
+                    <input defaultValue={user.email} {...register("email", { required: true })} placeholder="Email" />
+                    <input type="number" {...register("quantity", { required: true, min: 1, max: 10 })} placeholder="select quantity" />
+                    <input type="number" {...register("age", { required: true, min: 13, max: 99 })} placeholder="select age (min 13)" />
+                    <input type="submit" value="Confirm" />
                 </form>
             </Container>
 

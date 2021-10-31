@@ -12,19 +12,20 @@ const Rides = () => {
             .then(res => res.json())
             .then(data => setRides(data))
     }, [])
+
+
     return (
         <div>
-            <h1>Here is our rides</h1>
+            <h1 className="text-center my-5">Our Rides</h1>
             <Container>
-
                 <Row xs={1} md={3} className="g-4">
                     {
-                        rides.map(ride => <RidesData key={ride._id} ride = {ride}></RidesData>)
+                        rides.map(ride => <RidesData key={ride._id} ride={ride}></RidesData>)
                     }
                 </Row>
-                <Link  to="/home"><Button className="mt-2">Go Home</Button></Link>
+                <Link to="/home"><Button className="mt-2">Go Home</Button></Link>
             </Container>
-            
+
         </div>
     );
 };

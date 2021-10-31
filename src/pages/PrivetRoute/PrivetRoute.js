@@ -6,7 +6,7 @@ import useAuth from '../Hooks/useAuth';
 const PrivetRoute = ({children , ...rest}) => {
     const {user, isLoading} = useAuth();
     if (isLoading) {
-        return <Spinner className="item-center" animation="border" variant="danger" />
+        return <Spinner className="item-center mt-5" animation="border" variant="danger" />
         
     }
     return (

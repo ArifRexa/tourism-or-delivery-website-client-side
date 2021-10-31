@@ -22,7 +22,7 @@ const Login = () => {
             <Container>
 
                 <h1 className="text-center mt-5 ">Please Log in</h1>
-                <Button className="my-5" style={{display:"block", margin:"auto"}} onClick={handleGoogleSignIn}>Google Sign in</Button>
+                <Button className="my-5" style={{ display: "block", margin: "auto" }} onClick={handleGoogleSignIn}>Google Sign in</Button>
 
             </Container>
 

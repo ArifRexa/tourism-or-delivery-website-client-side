@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import "./card-style.css"
 
 const ManageOrdersData = (props) => {
-    const {_id, name, email, rideName, quantity, age, price, status} = props.allOrder
+    const { _id, name, email, rideName, quantity, age, price, status } = props.allOrder
     const [user, setUser] = useState({})
 
     const handleDelete = (id) => {
@@ -27,42 +28,42 @@ const ManageOrdersData = (props) => {
 
     }
 
-    const hanldeApproved = (e) =>{
+    const hanldeApproved = (e) => {
         const url = `https://immense-lake-80129.herokuapp.com/bookings/${_id}`;
         fetch(url, {
-            method:"PUT",
-            headers:{
-                "content-type":"application/json"
+            method: "PUT",
+            headers: {
+                "content-type": "application/json"
             },
             body: JSON.stringify(user)
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.modifiedCount > 0) {
-                window.alert("Approved Successfully")
-                window.location.reload(false);
-                
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    window.alert("Approved Successfully")
+                    window.location.reload(false);
+
+                }
+            })
 
     }
     return (
-        <div>
+        <div className="card-style my-2">
             {/* <h1>Name: {name}</h1> */}
-            <div style={{ marginBottom: "10px", padding: "10px", border: "2px solid black" }}>
-                <div>
+            <div style={{ marginBottom: "10px", padding: "10px", borderRadius: "15px" }} >
+                <div >
                     <b>Name:</b>{name} <br />
                     <b>Email:</b>{email}<br />
                     <b>Ride Name:</b>{rideName}<br />
                     <b>Price:</b>{price}<br />
                     <b>Quantity:</b>{quantity}<br />
-                    <b>Age:</b>{age} <br /> 
+                    <b>Age:</b>{age} <br />
                     <Button className="mt-2 me-2" onClick={() => handleDelete(_id)}>Delete</Button>
                     <Button className="mt-2" onClick={hanldeApproved}>{status}</Button>
                 </div>
 
             </div>
-            
+
         </div>
     );
 };

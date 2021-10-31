@@ -1,17 +1,26 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Button, Container, Row } from 'react-bootstrap';
+import { Button, Container, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 import HomeData from './HomeData';
+import "./Social.css"
 
 const HomeRides = () => {
     const [rides, setRides] = useState([])
+    
     useEffect(() => {
         fetch("https://immense-lake-80129.herokuapp.com/rides")
             .then(res => res.json())
             .then(data => setRides(data))
     }, [])
+
+    const {user, isLoading} = useAuth();
+    if (isLoading) {
+        return <Spinner className="item-center" animation="border" variant="danger" />
+        
+    }
     return (
         <div>
             <h1 className="text-center my-5">Our Rides</h1>

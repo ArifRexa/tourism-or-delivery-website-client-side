@@ -1,0 +1,11 @@
+.card-style{
+    border: 1px solid gray;
+    /* margin-right: 5px; */
+    border-radius: 15px;
+    gap: 4;
+}
+
+.card-style:hover{
+    box-shadow: 10px 10px 10px gray;
+    transition-duration: 1s;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Button, ButtonGroup, Row } from 'react-bootstrap';
 import useAuth from '../Hooks/useAuth';
 
 
@@ -29,15 +29,15 @@ const MyOrdersData = (props) => {
 
     }
     return (
-        <div >
-            <div style={{ marginBottom: "10px", padding: "10px", border: "2px solid black" }}>
+        <div className="card-style my-2">
+            <div style={{ marginBottom: "10px", padding: "10px" }}>
                 <div>
                     <b>Name: </b> {name} <br />
                     <b>Email: </b> {email}<br />
                     <b>Ride Name: </b> {rideName}<br />
                     <b>Quantity: </b> {quantity}<br />
                     <b>Price: </b> {price}<br />
-                    <b>Age: </b> {age} <br /> 
+                    <b>Age: </b> {age} <br />
                     <Button className="mt-2 me-2" onClick={() => handleDelete(_id)}>Delete</Button>
                     <Button className="mt-2">{status}</Button>
                 </div>

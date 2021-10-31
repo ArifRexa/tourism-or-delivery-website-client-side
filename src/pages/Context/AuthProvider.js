@@ -4,11 +4,11 @@ import UseFireBase from '../Hooks/UseFireBase';
 
 
 export const AuthContext = createContext();
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 
     const allContext = UseFireBase();
     return (
-        <AuthContext.Provider value = {allContext}>
+        <AuthContext.Provider value={allContext}>
             {children}
         </AuthContext.Provider>
     );

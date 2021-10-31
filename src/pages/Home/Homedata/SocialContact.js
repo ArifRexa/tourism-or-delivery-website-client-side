@@ -7,14 +7,14 @@ const SocialContact = () => {
         <div>
             <Container>
 
-            <h1 className="text-center my-5">Connect with us</h1>
-            <div className="icoon-style">
-                <i className="fab fa-facebook-square"></i>
-                <i className="fab fa-instagram-square"></i>
-                <i className="fab fa-twitter-square"></i>
-                <i className="fab fa-youtube-square"></i>
+                <h1 className="text-center my-5">Connect with us</h1>
+                <div className="icoon-style">
+                    <i className="fab fa-facebook-square"></i>
+                    <i className="fab fa-instagram-square"></i>
+                    <i className="fab fa-twitter-square"></i>
+                    <i className="fab fa-youtube-square"></i>
 
-            </div>
+                </div>
 
             </Container>
 

@@ -7,9 +7,9 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <Navbar bg="primary" expand={false} fixed="top">
+            <Navbar bg="warning" expand={false} fixed="top">
                 <Container fluid>
-                    <Navbar.Brand as={Link} to="/home">KBO PARK</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home" className="text-light fw-bold">KBO PARK</Navbar.Brand>
                     <Navbar.Toggle aria-controls="offcanvasNavbar" />
                     <Navbar.Offcanvas
                         id="offcanvasNavbar"
@@ -21,21 +21,21 @@ const Header = () => {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                                <Nav.Link as={Link} to="/rides">Rides</Nav.Link>
+                                <Nav.Link as={Link} to="/home"><i className="fas fa-home"></i> Home</Nav.Link>
+                                <Nav.Link as={Link} to="/rides"><i className="fas fa-biking"></i> Rides</Nav.Link>
                                 {
                                     user.email &&
                                     <div>
-                                        <Nav.Link as={Link} to="/myorders">My Orders</Nav.Link>
-                                        <Nav.Link as={Link} to="/manageorders">Manage All Bookings</Nav.Link>
-                                        <Nav.Link as={Link} to="/addservices">Add a New Feature</Nav.Link>
+                                        <Nav.Link as={Link} to="/myorders"><i className="fas fa-bookmark"></i> My Orders</Nav.Link>
+                                        <Nav.Link as={Link} to="/manageorders"><i className="fas fa-tasks"></i> Manage All Bookings</Nav.Link>
+                                        <Nav.Link as={Link} to="/addservices"><i className="fas fa-puzzle-piece"></i> Add a New Feature</Nav.Link>
                                     </div>
                                 }
                                 {
                                     !user.email ?
-                                        <Nav.Link as={Link} to="/login">Login</Nav.Link> : < >
-                                            <Nav.Link as={Link} to="/home" onClick={logOut} > Log Out</Nav.Link>
-                                            <Nav.Link as={Link} to="/login" >Signed as: {user.displayName}</Nav.Link>
+                                        <Nav.Link as={Link} to="/login"><i className="fas fa-sign-in-alt"></i> Login</Nav.Link> : < >
+                                            <Nav.Link as={Link} to="/home" onClick={logOut} ><i className="fas fa-sign-out-alt"></i> Log Out</Nav.Link>
+                                            <Nav.Link as={Link} to="/login" ><i className="fas fa-user-tie"></i> Signed as: {user.displayName}</Nav.Link>
                                         </>
                                 }
                             </Nav>

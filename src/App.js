@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import './App.css';
 import AddNewServices from './pages/AddNewServices/AddNewServices';
@@ -37,10 +36,7 @@ function App() {
               <Rides></Rides>
             </PrivetRoute>
 
-            {/* <PrivetRoute path = "/booking/:rideName">
-              <Booking></Booking>
-            </PrivetRoute> */}
-            <PrivetRoute path = "/booking/:_id">
+            <PrivetRoute path="/booking/:_id">
               <Booking></Booking>
             </PrivetRoute>
 
@@ -51,7 +47,7 @@ function App() {
             <Route path="/manageorders">
               <ManageOrders></ManageOrders>
             </Route>
-            
+
             <Route path="/addservices">
               <AddNewServices></AddNewServices>
             </Route>

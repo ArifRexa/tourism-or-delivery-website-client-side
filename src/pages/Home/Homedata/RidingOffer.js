@@ -8,7 +8,7 @@ const RidingOffer = () => {
             <i className="far fa-sad-tear tear-size"></i>
             <h4 className="text-danger">Sorry no offers Running</h4>
 
-            
+
         </div>
     );
 };
