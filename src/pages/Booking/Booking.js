@@ -21,7 +21,7 @@ const Booking = () => {
         data.price = `${details.price}`
         data.rideName = `${details.rideName}`
         console.log(data);
-        axios.post('https://immense-lake-80129.herokuapp.com/bookings', data)
+        axios.post('https://thempark.onrender.com/bookings', data)
             .then(res => {
                 if (res.data.insertedId) {
                     window.alert("Booking Confirmed Successfully")
@@ -34,10 +34,10 @@ const Booking = () => {
     };
 
     useEffect(() => {
-        fetch(`https://immense-lake-80129.herokuapp.com/rides/${_id}`)
+        fetch(`https://thempark.onrender.com/rides/${_id}`)
             .then(res => res.json())
             .then(data => setDetails(data))
-    }, [])
+    }, [_id])
 
     const { rideName, price } = details;
     console.log(details.price);

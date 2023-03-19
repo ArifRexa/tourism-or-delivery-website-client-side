@@ -9,17 +9,17 @@ import "./Social.css"
 
 const HomeRides = () => {
     const [rides, setRides] = useState([])
-    
+
     useEffect(() => {
-        fetch("https://immense-lake-80129.herokuapp.com/rides")
+        fetch("https://thempark.onrender.com/rides")
             .then(res => res.json())
             .then(data => setRides(data))
     }, [])
 
-    const {user, isLoading} = useAuth();
+    const { user, isLoading } = useAuth();
     if (isLoading) {
         return <Spinner className="item-center" animation="border" variant="danger" />
-        
+
     }
     return (
         <div>
@@ -31,8 +31,8 @@ const HomeRides = () => {
                         rides.map(ride => <HomeData key={ride._id} ride={ride}></HomeData>)
                     }
                 </Row>
-                <Link to = "/rides"><Button className="my-3">See more</Button></Link>
-                
+                <Link to="/rides"><Button className="my-3">See more</Button></Link>
+
             </Container>
 
 

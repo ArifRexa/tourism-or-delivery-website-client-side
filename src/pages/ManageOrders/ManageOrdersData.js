@@ -9,7 +9,7 @@ const ManageOrdersData = (props) => {
     const handleDelete = (id) => {
         const proceed = window.confirm("Are you sure? Do you want to cancel this Booking?")
         if (proceed) {
-            const url = `https://immense-lake-80129.herokuapp.com/bookings/${id}`;
+            const url = `https://thempark.onrender.com/bookings/${id}`;
             fetch(url, {
                 method: "DELETE"
             })
@@ -29,7 +29,7 @@ const ManageOrdersData = (props) => {
     }
 
     const hanldeApproved = (e) => {
-        const url = `https://immense-lake-80129.herokuapp.com/bookings/${_id}`;
+        const url = `https://thempark.onrender.com/bookings/${_id}`;
         fetch(url, {
             method: "PUT",
             headers: {

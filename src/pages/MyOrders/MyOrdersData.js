@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Button, ButtonGroup, Row } from 'react-bootstrap';
-import useAuth from '../Hooks/useAuth';
+import React from 'react';
+import { Button } from 'react-bootstrap';
+// import useAuth from '../Hooks/useAuth';
 
 
 
@@ -10,7 +10,7 @@ const MyOrdersData = (props) => {
     const handleDelete = (id) => {
         const proceed = window.confirm("Are you sure? Do you want to cancel this ride?")
         if (proceed) {
-            const url = `https://immense-lake-80129.herokuapp.com/bookings/${id}`;
+            const url = `https://thempark.onrender.com/bookings/${id}`;
             fetch(url, {
                 method: "DELETE"
             })

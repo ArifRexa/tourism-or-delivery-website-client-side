@@ -5,7 +5,7 @@ import ManageOrdersData from './ManageOrdersData';
 const ManageOrders = () => {
     const [allOrders, setAllOrders] = useState([])
     useEffect(() => {
-        fetch("https://immense-lake-80129.herokuapp.com/bookings")
+        fetch("https://thempark.onrender.com/bookings")
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [])

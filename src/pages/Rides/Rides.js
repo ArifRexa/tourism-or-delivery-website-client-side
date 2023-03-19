@@ -8,7 +8,7 @@ import RidesData from './RidesData';
 const Rides = () => {
     const [rides, setRides] = useState([])
     useEffect(() => {
-        fetch("https://immense-lake-80129.herokuapp.com/rides")
+        fetch("https://thempark.onrender.com/rides")
             .then(res => res.json())
             .then(data => setRides(data))
     }, [])

@@ -10,7 +10,7 @@ const MyOrders = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        fetch("https://immense-lake-80129.herokuapp.com/bookings")
+        fetch("https://thempark.onrender.com/bookings")
             .then(res => res.json())
             .then(data => {
                 const v = data.filter(p => p.email === user.email)
